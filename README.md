@@ -9,11 +9,10 @@ This repository contains all code needed to reproduce the analyses and figures i
 ## Repository structure
 
 ```
-├── env/
-│   ├── transmission_functions.py   # Core model library (see below)
-│   ├── prettyplotlib.py            # Matplotlib styling helpers
-│   ├── generate_figures.ipynb      # Generates all manuscript figures
-│   └── output/
+├── transmission_functions.py   # Core model library (see below)
+├── prettyplotlib.py            # Matplotlib styling helpers
+├── generate_figures.ipynb      # Generates all manuscript figures
+└── output/
 │       ├── heatmap_data.npz        # Pre-computed leaky correction accuracy grids
 │       └── heterogeneous_concentration_heatmap.npz  # Pre-computed heterogeneous correction grids
 ```
@@ -43,7 +42,6 @@ pip install numpy scipy matplotlib
 All figures are generated from a single notebook:
 
 ```bash
-cd env
 jupyter notebook generate_figures.ipynb
 ```
 
