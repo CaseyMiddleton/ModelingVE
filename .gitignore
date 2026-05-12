@@ -1,0 +1,8 @@
+explore*
+/figs
+/bin
+/include
+/lib
+pyenv*
+.DS_store
+
