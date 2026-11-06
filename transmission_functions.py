@@ -14,6 +14,11 @@ def initialize_SIR(N,init_inf=1):
 def get_herd_immunity_threshold(R0,VE):
     return (1 - (1/R0))/VE
 
+def get_herd_immunity_threshold_heterogeneous(R0,mean_VE,concentration):
+    # alpha = mean_VE * concentration
+    # beta = (1 - mean_VE) * concentration 
+    return (1 - (1/R0))/mean_VE
+
 def get_herd_immunity_VE(R0,vax_rate):
     return (1 - (1/R0))/vax_rate
 
@@ -916,6 +921,12 @@ def run_SIRV_heterogeneous(
     }
 
     return out
+
+def get_cumulative_infected_heterogeneous(res):
+    return np.sum(res["VR"],axis=0) + res["R"]
+
+def get_vax_infected_heterogeneous(res):
+    return np.sum(res["VI"],axis=0)
 
 # -----------------------------------------------------------
 # Other models of VE ---------------------------
